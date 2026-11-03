@@ -3,6 +3,12 @@
     --paper: #f9fafb;
     --card-bg: #ffffff;
     --accent: #2563eb;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 body {
@@ -21,7 +27,7 @@ body {
     background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px -1px var(--shadow);
     max-width: 600px;
     width: 100%;
 }
