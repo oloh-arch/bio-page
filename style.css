@@ -4,10 +4,22 @@
     --paper: #f9fafb;
     --card-bg: #ffffff;
     --accent: #2563eb;
+    --accent-hover: #1d4ed8;
     --shadow: rgba(0, 0, 0, 0.1);
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 img {
+    display: block;
     max-width: 100%;
     height: auto;
 }
@@ -21,8 +33,9 @@ body {
     margin: 0;
     padding: 1.5rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    gap: 1.5rem;
     min-height: 100vh;
 }
 
@@ -49,10 +62,36 @@ body {
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--accent);
+    flex-shrink: 0;
+}
+
+a {
+    color: var(--accent);
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
 }
 
 @media (min-width: 768px) {
+    body {
+        padding: 2.5rem 1.5rem;
+    }
+
     .card {
         padding: 3rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
 }
